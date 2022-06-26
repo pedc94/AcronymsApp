@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/lookUpFragment">
+
+    <fragment
+        android:id="@+id/lookUpFragment"
+        android:name="com.example.acronymsapp.presentation.feature.acronymlookup.LookUpFragment"
+        android:label="LookUpFragment" >
+        <action
+            android:id="@+id/action_lookUpFragment_to_acronymMeaningListFragment"
+            app:destination="@id/acronymMeaningListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/acronymMeaningListFragment"
+        android:name="com.example.acronymsapp.presentation.feature.acronymmeaninglist.AcronymMeaningListFragment"
+        android:label="AcronymMeaningListFragment" >
+        <action
+            android:id="@+id/action_acronymMeaningListFragment_to_lookUpFragment"
+            app:destination="@id/lookUpFragment" />
+        <argument
+            android:name="acronymMeanings"
+            app:argType="com.example.acronymsapp.domain.model.AcronymMeaningModel[]" />
+        <argument
+            android:name="acronym"
+            app:argType="string" />
+    </fragment>
+</navigation>
